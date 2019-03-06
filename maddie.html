@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<head>
+<script src="/assets/jquery.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+<style>
+body {
+  font-family: helvetica, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  background: #232323;
+}
+div {
+  height: 300px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: 'Londrina Shadow', cursive;
+  text-align: center;
+  font-size: 75px;
+  color: #aaaaaa;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: #bbbbbb;
+  margin: 0px 0 70px 0;
+}
+p {
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+ ul {
+      padding: 10px;
+      background: rgba(0,0,0,0.5);
+      text-align: center;
+    }
+    li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    }
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+}
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+<ul>
+      <li><button onclick=sweet()>sweet</button></li>
+      <li><button onclick=sour()>sour
+      </button></li>
+      <li><button onclick=salty()>salty</button></li>
+    </ul>
+
+<h1>Maddie's restaurant</h1>
+<h2>A tumblr way of eatting</h2>
+
+<div id="sweet"> </div>
+
+<script>
+
+sweetImages = [
+  'url("http://www.fnstatic.co.uk/images/content/package/collage-12-sweet-treats-that-will-never-be-the-new-cupcake-jpg.jpeg")',
+  'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6a5LRMHoIy0I-CPza0hzGtFPrOybtTi1TIfXnD9YHnxNx8eWi")',
+  'url("https://cache.desktopnexus.com/thumbseg/581/581579-bigthumbnail.jpg")',
+]
+
+sourImages = [
+  'url("https://images-na.ssl-images-amazon.com/images/I/61LPwnDF01L._SX355_.jpg")',
+  'url("https://images-na.ssl-images-amazon.com/images/I/81zWg1w1uVL._SX522_.jpg")',
+  'url("https://www.sweetmemoriesdelivered.uk/ekmps/shops/c751f7/images/heavenly-delights-sour-twin-cherries-1kg-bulk-bag-9704-p.jpg")',
+]
+
+saltyImages = [
+  'url("https://media.self.com/photos/597a52d7eb3de92582375b2f/4:3/w_728,c_limit/SALTY-Fries-Close-Up.jpg")',
+  'url("https://cdn.apartmenttherapy.info/image/fetch/f_auto,q_auto,w_640,h_430,c_fit,fl_strip_profile/https://s3.amazonaws.com/pixtruder/original_images/b802b4dcfdbb085c7763072d2b546e1df96a53b6")',
+  'url("https://lovesodium.weebly.com/uploads/9/0/8/3/9083254/5384096_orig.jpg")',
+]
+
+sweetDivs = [ 
+  '<div class="item"><p>SWEET CAKE MIXS <span class="price">$14</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+			'<div class="item"><p>MACAROONS <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
+			'<div class="item"><p>DONUTS <span class="price">$8</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+]
+
+
+sourDivs = [ 
+  '<div class="item"><p>SOUR LONG LEGS <span class="price">$14</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+			'<div class="item"><p>SOUR BALLS <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
+			'<div class="item"><p>SOUR CANDY <span class="price">$8</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+]
+
+saltyDivs = [ 
+  '<div class="item"><p> CHIPS <span class="price">$14</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+			'<div class="item"><p>PIZZA <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
+			'<div class="item"><p>PRETZEL <span class="price">$8</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+]
+
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+
+  function sweet() {
+     
+     eat = document.getElementById("sweet")
+     eat.innerHTML = ''
+     eat.innerHTML += sweetDivs[0]
+     eat.innerHTML += sweetDivs[1]
+     eat.innerHTML += sweetDivs[2]
+     
+    items = document.getElementsByClassName("item")
+    items[0].style.background = sweetImages[0]
+    items[1].style.background = sweetImages[1]
+    items[2].style.background = sweetImages[2]
+  } 
+  
+  function sour() {
+    
+     my = document.getElementById("sweet")
+     my.innerHTML = ''
+     my.innerHTML += sourDivs[0]
+     my.innerHTML += sourDivs[1]
+     my.innerHTML += sourDivs[2]
+    
+    items = document.getElementsByClassName("item")
+    items[0].style.background = sourImages[0]
+    items[1].style.background = sourImages[1]
+    items[2].style.background = sourImages[2]
+  }
+  
+  function salty() {
+    
+     food = document.getElementById("sweet")
+     food.innerHTML = ''
+     food.innerHTML += saltyDivs[0]
+     food.innerHTML += saltyDivs[1]
+     food.innerHTML += saltyDivs[2]
+    
+    items = document.getElementsByClassName("item")
+    items[0].style.background = saltyImages[0]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.background = saltyImages[1]
+    items[2].style.background = saltyImages[2]
+    
+  }
+</script>
+
+
+ 
+
+</body>
+
+
